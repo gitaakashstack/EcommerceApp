@@ -1,0 +1,68 @@
+@import '../../../../common-styles.scss';
+@import '../../../../variables.scss';
+
+.atop-nav__account{
+    display: flex;
+    align-items: center;
+
+    > * {
+        min-width: 80px;
+        cursor: pointer;
+        padding:10px;
+
+    }
+
+    .atop-nav__account-links:hover{
+        @include basic-hover;
+    }
+    .atop-nav__account-icon{
+        display: flex;
+        align-items: center;
+    }
+
+    .atop-nav__account-nav{
+        position: relative;
+        padding:0 10px;
+
+    }
+
+    .atop-nav__account-nav-links{
+        display: none;
+        width: 100%;
+        position: absolute;
+        top:100%;
+        left:0;
+        margin-top: 5px;
+        background-color:rgb(219, 234, 255) ;
+        padding:0 10px;
+        z-index: 2;
+        border-radius: 0 0 5px 5px;
+
+        li{
+            padding:5px 0;
+        }
+
+        li:not(:last-child){
+            margin-bottom: 5px;
+        }
+
+        hr{
+            color: black;
+        }
+    }
+    .atop-nav__account-nav-links::before{
+        content: "";
+        position: absolute;
+        left:50%;
+        transform: translateX(-50%);
+        bottom:100%;
+        border-width: 10px 40px 10px 40px;
+        border-style:  solid;
+        border-color:  transparent transparent  rgb(219, 234, 255) transparent;
+    }
+    .atop-nav__account-icon:hover + .atop-nav__account-nav-links,
+    .atop-nav__account-nav-links:hover
+    {
+        display: block;
+    }
+}

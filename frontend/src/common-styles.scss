@@ -1,0 +1,41 @@
+//TODO make thsese functions taking arguments
+@mixin basic-btn {
+    display: inline-block;
+    font-size: 1.1em;
+    padding:2px 15px;
+    cursor: pointer;
+    margin:10px 0;
+}
+
+@mixin basic-hover {
+    background-color: $secondary-color-1;
+    transition:background-color 1s;
+}
+
+@mixin two-column-grid($col-width-1, $col-widht-2){
+    display: grid;
+    grid-template-columns: $col-width-1 $col-widht-2;
+    gap:20px;
+
+}
+
+generic-btn{
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+checkout-btn{
+    @extend generic-btn;
+    width:max-content;
+    background-color: orange;
+    color:white;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.centered{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

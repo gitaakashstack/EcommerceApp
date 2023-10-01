@@ -1,0 +1,7 @@
+@import '../../common-styles.scss';
+
+:host{
+    @include two-column-grid(0.7fr, 0.3fr);
+}
+
+

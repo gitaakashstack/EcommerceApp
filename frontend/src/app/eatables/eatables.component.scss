@@ -1,0 +1,11 @@
+li{
+    padding: 10px 5px;
+}
+li:not(:last-child){
+    border-bottom: 1px solid black;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 30% 70%;
+}

@@ -1,0 +1,13 @@
+@import '../variables.scss';
+@import '../common-styles.scss';
+
+
+:host{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+.general-wrapper{
+    padding:20px;
+    flex-grow: 1;
+}

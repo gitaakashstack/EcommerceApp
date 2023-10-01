@@ -1,0 +1,17 @@
+<nav class="home-nav">
+    <ul class="home-nav__nav">
+        <li class="home-nav__nav-item" *ngFor="let category of categories">
+            <div>
+                {{category.displayName}}
+            </div>
+            <ul class="home-nav__nav-item--dropdown">
+                <li 
+                    *ngFor="let subcategory of category.subcategory"
+                    [routerLink]="['product',subcategory.name]"
+                    (click)="loadChips()">
+                    {{subcategory.displayName}}
+                </li>
+            </ul>
+        </li>
+    </ul>
+</nav>

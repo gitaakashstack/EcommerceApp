@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+@import './variables.scss';
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+
+}
+ul{
+    list-style-type: none;
+}
+
+input{
+    outline:none;
+}
+html, body { height: 100%; }
+body { 
+        margin: 0; 
+        font-family: Roboto, "Helvetica Neue", sans-serif; 
+        background-color: $primary-color-1;
+    }
+
+// @mixin basic-btn {
+//     display: inline-block;
+//     font-size: 1.1em;
+//     padding:2px 15px;
+//     cursor: pointer;
+// }

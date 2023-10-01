@@ -1,0 +1,12 @@
+<div class="atop-nav">
+    <app-logo [routerLink]="['/']"></app-logo>
+    <div class="atop-nav__search">
+        <input type="text" placeholder="Search Any Product" [(ngModel)]="searchValue" (ngModelChange)="onSearch($event)"  [routerLink]="['search']" />
+    </div>
+    <app-nav-account *ngIf="!inSearchRoute"></app-nav-account>
+
+    <div class="atop-nav__cart" [routerLink]="['cart']">
+        <mat-icon>shopping_cart</mat-icon>
+        <span>{{totalCartItems}}</span>
+    </div>
+</div>

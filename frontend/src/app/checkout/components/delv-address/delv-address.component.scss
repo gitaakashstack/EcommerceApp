@@ -1,0 +1,44 @@
+@import '../../../../common-styles.scss';
+@import '../../checkout-common-styles.scss';
+
+.checkout-option{
+    @extend checkout-option-style;
+
+    .address-list{
+        padding:20px 25px;
+
+        .address-item{
+            margin:20px 0;
+            display: flex;
+            gap:20px;
+            align-items: flex-start;
+
+            input{
+                vertical-align: baseline;
+                margin-top: 3px;
+            }
+
+            .address-item__info{
+                
+                h4{
+                    margin-bottom: 10px;
+                }
+
+                button{
+                    @extend checkout-btn;
+                    padding:10px 50px;
+                    margin-top:10px;
+                }
+            }
+        }
+    }
+
+    .new-address{
+        display: flex;
+        align-items: center;
+        gap:20px;
+        padding:15px 25px;
+        color: dodgerblue;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,38 @@
+@import '../../../../variables.scss';
+@import '../../../app.component.scss';
+
+.side-block{
+
+    .price-summary{
+        box-shadow: 0 0 3px 1px rgba(0,0,0,0.1);
+        padding:0 15px;
+        max-height: 250px;
+
+        h2{
+            border-bottom: 1px solid $primary-color-2;
+            padding: 10px 0;
+        }
+
+        .price-summary__container{
+            padding: 15px 0;
+
+            > div:not(:nth-child(3),:nth-child(4)){
+                margin-bottom: 15px;
+            }
+
+            hr{
+                margin:10px 0;
+                border: 1px dotted $primary-color-2;
+            }
+            .price-summary--flex{
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+
+    .slot-btn{
+        @include basic-btn;
+        width: 100%;
+    }
+}

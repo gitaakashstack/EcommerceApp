@@ -1,0 +1,19 @@
+<div class="slot-item slot-grid--slot-width" 
+    [ngStyle]="{'borderLeftColor':isSlotAvl ? colorCode.dark : 'transparent', 
+                'backgroundColor':isSlotAvl ? colorCode.light : 'rgb(190, 190, 190)'}"
+>
+    <ng-container *ngIf="isSlotAvl; then slotAvl else slotUnavl">
+    </ng-container>
+    <ng-template #slotAvl>
+        <div class="slot-item__info">
+            <h3 class="slot-item--bold">{{emission}}</h3>
+            <p class="slot-item--small">CO2/km emission level</p>
+        </div>
+        <div class="slot-item--round" [ngStyle]="{'backgroundColor':colorCode.dark}">
+           <p>{{delvCharge}}</p> 
+        </div>
+    </ng-template>  
+    <ng-template #slotUnavl>
+        <div class="slot-item--grey">Slot Unavailable</div>
+    </ng-template>
+</div>

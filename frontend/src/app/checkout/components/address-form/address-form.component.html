@@ -1,0 +1,46 @@
+<form class="address-form" [formGroup]="addrForm" (ngSubmit)="submitHandler()">
+        <div class="input-elem__container">
+            <input type="text" placeholder=" " formControlName="name" id="name" 
+                [ngClass]="{'outline-red':nameControl.dirty && nameControl.invalid}"
+            >
+            <label for="name">Name</label>
+        </div>
+        <div class="input-elem__container">
+            <input type="text" placeholder=" " formControlName="mobile" id="mobile">
+            <label for="mobile">Mobile</label>
+        </div>
+        <div class="input-elem__container">
+            <input type="text" placeholder=" " formControlName="zipcode" id="zipcode">
+            <label for="zipcode">Pincode</label>
+        </div>
+        <div class="input-elem__container">
+            <input type="text" placeholder=" " formControlName="house" id="house">
+            <label for="house">House No./Flat No.</label>
+        </div>
+        <div class="textarea-elem__container">  
+            <textarea rows="3" cols="50" placeholder=" " formControlName="address" id="address"></textarea>
+            <label for="address">Area</label>
+        </div>  
+        <div class="input-elem__container">
+            <input type="text" placeholder=" " formControlName="city" id="city">
+            <label for="city">City</label>
+        </div>
+        <div class="input-elem__container">
+            <select formControlName="state" id="state" required>
+                <option disabled>----Select Your State-----</option>
+                <option *ngFor="let state of states" [value]="state">
+                    {{state}}
+                </option>
+            </select>
+            <label for="state">State</label>
+        </div>
+        <div class="input-elem__container">
+            <input type="text" placeholder=" " formControlName="landmark">
+            <label for="landmark">Landmark (Optional)</label>
+        </div>
+        <div class="input-elem__container">
+            <input type="text" placeholder=" " formControlName="alt_mobile">
+            <label for="alt_mobile">Alternate Mobile (Optional)</label>
+        </div>
+        <button class="save-btn">save and deliver here</button>
+</form>

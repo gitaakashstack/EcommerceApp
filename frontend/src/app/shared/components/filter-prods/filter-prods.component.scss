@@ -1,0 +1,13 @@
+aside{
+    //margin-top:20px;
+    box-shadow: 0 0 2px 0 rgba(0,0,0,0.4);
+
+    .filter-element{
+        padding: 10px;
+    }
+    > .filter-element:not(:last-child){
+        border-width: 0 0 1px 0;
+        border-color: rgba(0,0,0,0.1);
+        border-style: solid;
+    }
+}

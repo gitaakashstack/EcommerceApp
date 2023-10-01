@@ -1,0 +1,11 @@
+<div class="filter-rect-block">
+    <ng-content select="span"></ng-content>
+    <!-- <span>Sort By : {{currentSort.name}}</span> -->
+    <ng-container *ngIf="isDownArrowHead; then arrowDropDown else arrowDropUp"></ng-container>
+    <ng-template #arrowDropDown>
+        <mat-icon (click)="invertArrowHead()">arrow_drop_down</mat-icon>
+    </ng-template>
+    <ng-template #arrowDropUp>
+        <mat-icon (click)="invertArrowHead()">arrow_drop_up</mat-icon>
+    </ng-template>
+</div>

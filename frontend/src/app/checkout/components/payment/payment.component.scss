@@ -1,0 +1,22 @@
+@import '../../checkout-common-styles.scss';
+@import '../../../../common-styles.scss';
+
+.checkout-option{
+    @extend checkout-option-style;
+
+    .payment-list{
+        padding:20px 25px;
+
+        .payment-item{
+            margin:20px 0;
+            display: flex;
+            gap:20px;
+            align-items: flex-start;
+
+            input{
+                vertical-align: baseline;
+                margin-top: 3px;
+            }
+        }
+    }
+}

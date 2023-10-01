@@ -1,0 +1,15 @@
+.prod__quant-btn{
+    background-color:crimson;
+    color:white;
+    box-shadow: 0 0 1px 0 crimson;
+    border-radius: 15px;
+    padding:3px 7px;
+    display: flex;
+    align-items: center;
+
+    span:first-child,span:last-child{
+        font-size: 1.2rem;
+        font-weight: 500;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,40 @@
+@import '../../../../common-styles.scss';
+
+.checkout-option__title{
+    // background-color: white;
+    padding:20px 25px;
+    display: flex;
+    gap:20px;
+    align-items: center;
+
+    .option-index{
+        padding:2px 5px;
+        font-size: 0.6em;
+        background-color: rgb(198, 196, 196);
+    }
+
+    .option-name{
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 1.2em;
+    }
+
+    .change-btn{
+        @extend generic-btn;
+        margin-left: auto;
+        padding: 10px 20px;
+        text-transform: uppercase;
+        background-color: white;
+        color:blue;
+        border:1px solid rgb(206, 206, 206)
+
+    }
+}
+
+.checkout-option__title--white{
+    background-color: white !important;
+}
+
+.checkout-option__title--blue{
+    background-color: dodgerblue !important;
+}

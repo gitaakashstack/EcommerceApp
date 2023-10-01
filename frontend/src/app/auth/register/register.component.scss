@@ -1,0 +1,69 @@
+@import '../../app.component.scss';
+
+header{
+  text-align: center;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+.form {
+  
+    input {
+      display: block;
+      margin-top: 5px;
+    }
+  
+    .form__inputs-wrapper {
+      padding: 20px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+  
+    .form__input-wrapper--radio {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+  
+      div {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+      }
+    }
+  
+    .invalid-input {
+      border: 2px solid red;
+    }
+  
+    .form__input-wrapper--dynamic {
+      button{
+        margin-bottom: 10px;
+      }
+      > div:not(:last-child) {
+        margin-bottom: 5px;
+      }
+  
+      > div > div {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+  
+      > div > div > div {
+        display: flex;
+        gap: 10px;
+      }
+      span {
+        cursor: pointer;
+      }
+    }
+
+    .form__submit-btn-wrapper{
+
+      button{
+      @include basic-btn
+      }
+    }
+  }
+  

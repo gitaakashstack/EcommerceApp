@@ -1,0 +1,29 @@
+.sort-block{
+    box-shadow: 0 0 2px 0 rgba(0,0,0,0.4);
+    padding: 10px;
+    margin-bottom: 30px;
+
+    .sort-block__options-list{
+        display: flex;
+        flex-direction: column;
+        gap:10px;
+        margin-top: 15px;
+
+        span{
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            text-align: center;
+            
+        }
+        input{
+            vertical-align: middle;
+            width: 16px;
+            height: 16px;
+        }
+        .sort-block__option-item{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}

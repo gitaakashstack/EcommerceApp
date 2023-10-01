@@ -1,0 +1,41 @@
+@import '../../../../common-styles.scss';
+@import '../../checkout-common-styles.scss';
+
+.checkout-option{
+    @extend checkout-option-style;
+
+    .login-detail{
+        padding:30px 40px;
+        display: flex;
+        flex-direction: column;
+        gap:10px;
+        background-color: white;
+
+        .login-detail--flex{
+            display: flex;
+            gap:20px;
+            align-items: center;
+        }
+
+        .login-detail--font-small{
+            font-size: 0.9rem;
+        }
+
+        .login-detail--font-small + span{
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        .login-detail--blue{
+            color:blue;
+            font-size: 0.9rem;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+        .login-detail__btn{
+            @extend checkout-btn;
+            padding: 10px 70px;
+            
+        }
+
+    }
+}

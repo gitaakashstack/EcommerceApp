@@ -1,0 +1,25 @@
+<aside class="side-block">
+    <div class="price-summary">
+        <h2>PRICE DETAILS</h2>
+        <dl class="price-summary__container">
+            <div class="price-summary--flex">
+                <dt>MRP ({{totalItems}} items)</dt>
+                <dd>{{totalPrice}}</dd>
+            </div>
+            <div class="price-summary--flex">
+                <dt>Product Discount</dt>
+                <dd>{{totalDiscount}}</dd>
+            </div>
+            <div class="price-summary--flex">
+                <dt>Delivery Fee</dt>
+                <dd>{{deliveryFee}}</dd>
+            </div>
+            <hr>
+            <div class="price-summary--flex price-summary__total">
+                <dt>Total Amount</dt>
+                <dd>{{netPrice}}</dd>
+            </div>
+        </dl>
+    </div>
+    <button class="slot-btn" [routerLink]="['/checkout']">Checkout</button>
+</aside>

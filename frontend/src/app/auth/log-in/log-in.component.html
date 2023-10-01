@@ -1,0 +1,41 @@
+<app-card>
+    <header>Log In</header>
+    <form class="form" [formGroup]="loginForm">
+        <div class="form__inputs-wrapper">
+            <div class="form__input-wrapper">
+                <label for="email">Email</label>
+                <input type="text" id="email" [formControlName]="'email'" />
+                <div class="err-msg" *ngIf="emailControl.touched && emailControl.invalid">
+                    <span *ngIf="emailControl.errors?.['required']">
+                        Email cannot be empty
+                    </span>
+                    <span *ngIf="emailControl.errors?.['email']">
+                        Please enter a valid email
+                    </span>
+                </div>
+            </div>
+            <div class="form__input-wrapper">
+                <label for="password">Password</label>
+                <input type="password" id="password" [formControlName]="'password'" />
+                <div class="err-msg" *ngIf="passwordControl.touched && passwordControl.invalid">
+                    <span *ngIf="passwordControl.errors?.['required']">
+                        Password cannot be empty
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="err-msg form-err" *ngIf="showHttpErr">
+            {{loginForm.errors?.['backendError']}}
+        </div>
+        <div class="form__btn-wrapper">
+            <button type="button" (click)="onLogIn($event)">Log In</button>
+        </div>
+    </form>
+    <hr>
+    <footer class="register-block">
+        <p>Don't Have An Account, Register</p>
+        <div (click)="navigateToRegister()">
+            <button type="button">Register</button>
+        </div>
+    </footer>
+</app-card>

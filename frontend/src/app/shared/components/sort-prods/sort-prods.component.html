@@ -1,0 +1,23 @@
+<div class="sort-block">
+    <!-- <div class="sort-block__current-sort">
+        <span>Sort By : {{currentSort.name}}</span>
+        <ng-container *ngIf="!showSortOptions; then arrowDropDown else arrowDropUp"></ng-container>
+        <ng-template #arrowDropDown>
+            <mat-icon (click)="toggleArrowHead()">arrow_drop_down</mat-icon>
+        </ng-template>
+        <ng-template #arrowDropUp>
+            <mat-icon (click)="toggleArrowHead()">arrow_drop_up</mat-icon>
+        </ng-template>
+    </div> -->
+    <app-filter-rect-template (onInvertArrowHead)="toggleOptions($event)">
+        <span>Sort By : {{currentSort.name}}</span>
+    </app-filter-rect-template>
+    <div *ngIf="showSortOptions" class="sort-block__options-list">
+        <div class="sort-block__option-item" *ngFor="let sortOption of sortOptions">
+            <label [htmlFor]="sortOption.name">{{sortOption.name}}</label>
+            <span>
+                <input [id]="sortOption.name" type="radio">
+            </span>
+        </div>
+    </div>
+</div>

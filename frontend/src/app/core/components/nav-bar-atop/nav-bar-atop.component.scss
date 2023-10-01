@@ -1,0 +1,33 @@
+@import '../../../../common-styles.scss';
+
+.atop-nav{
+    display: flex;
+    align-items: center;
+    gap:10px;
+    padding:20px 40px;
+
+    .atop-nav__search{
+        flex-grow: 1;
+
+        input{
+            font-size: 1.1em;
+            padding:5px 10px;
+            width: 100%;
+            border:none;
+            box-shadow: 0 0 2px 1px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+    }
+
+    .atop-nav__cart{
+           
+        mat-icon{
+            vertical-align: middle;
+        }
+
+        span{
+            vertical-align: super;
+            
+       }
+    }
+}

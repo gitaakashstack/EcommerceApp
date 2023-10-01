@@ -1,0 +1,66 @@
+@import '../../../../variables.scss';
+@import '../../../../common-styles.scss';
+
+.home-nav{
+    border-top:1px solid black;
+    border-width: 1px 0 1px 0;
+    padding:0 50px;
+    $primary-color-1:#FFFBF5;
+    background-color: $primary-color-2;
+    box-shadow: 0 2px 2px 0px $primary-color-2;
+    $side-padding:20px;
+    
+    .home-nav__nav{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        .home-nav__nav-item{
+            width: 250px;
+            position: relative;
+            cursor: pointer;
+
+            div{
+                padding: 20px $side-padding;
+                font-weight: 500;
+                font-size: 1.5rem;
+            }
+            div:hover{
+                @include basic-hover
+            }
+        }
+       
+        .home-nav__nav-item .home-nav__nav-item--dropdown{
+            display: none;
+            background-color: $primary-color-2;
+            width: 250px;
+            position:absolute;
+            z-index: 10;
+            top:100%;
+            left:0;
+            border-radius: 0 0 5px 5px;
+
+            li{
+                position: relative;
+                cursor: pointer;
+                padding: 10px $side-padding;
+            }
+            li:hover{
+               @include basic-hover;
+            }
+            li:not(:last-child)::after{
+                content:'';
+                position: absolute;
+                width: 80%;
+                bottom: 0;
+                left:10%;
+                height:1px;
+                background-color: black;
+
+            }
+        }
+        .home-nav__nav-item:hover .home-nav__nav-item--dropdown{
+            display: block;
+        }
+    }
+}

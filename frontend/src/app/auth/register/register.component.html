@@ -1,0 +1,87 @@
+<app-card>
+  <header>Register Yourself</header>
+  <form class="form" [formGroup]="regForm" (submit)="onFormSubmit($event)">
+      <div class="form__inputs-wrapper">
+        <div class="form__input-wrapper">
+          <label for="name">Name</label>
+          <input type="text" id="name" [formControlName]="'name'" />
+          <div *ngIf="nameControl.touched && nameControl.invalid">
+            <span *ngIf="nameControl.errors!['required']"
+              >Name cannot be empty</span
+            >
+            <span *ngIf="nameControl.errors!['invalidName']"
+              >{{ nameControl.errors!["value"] }} is an invalid name</span
+            >
+          </div>
+        </div>
+        <div class="form__input-wrapper">
+          <label for="email">Email</label>
+          <input type="text" id="email" [formControlName]="'email'" />
+          <div *ngIf="emailControl.touched && emailControl.invalid">
+            <span *ngIf="emailControl.errors!['required']"
+              >Email cannot be empty</span
+            >
+          </div>
+        </div>
+        <div class="form__input-wrapper">
+          <label for="mobile">Mobile</label>
+          <input type="text" id="mobile" [formControlName]="'mobile'" />
+          <div *ngIf="mobileControl.touched && mobileControl.invalid">
+            <span *ngIf="mobileControl.errors!['required']"
+              >Mobile cannot be empty</span
+            >
+          </div>
+        </div>
+        <div class="form__input-wrapper">
+          <label for="password">Password</label>
+          <input type="text" id="password" [formControlName]="'password'" />
+          <div *ngIf="passwordControl.touched && passwordControl.invalid">
+            <span *ngIf="passwordControl.errors!['required']"
+              >Password cannot be empty</span
+            >
+          </div>
+        </div>
+        <div class="form__input-wrapper form__input-wrapper--radio">
+          <div *ngFor="let gender of genders">
+            <label [for]="gender">{{ gender }}</label>
+            <input
+              type="radio"
+              [id]="gender"
+              name="gender"
+              [formControlName]="'gender'"
+              [value]="gender"
+            />
+          </div>
+        </div>
+        <div class="form__input-wrapper">
+          <select [formControlName]="'location'">
+            <option [value]="null" disabled="true">-----Select Location-----</option>
+            <option *ngFor="let location of locations" [value]="location">
+              {{ location }}
+            </option>
+          </select>
+        </div>
+        <div
+          class="form__input-wrapper form__input-wrapper--dynamic"
+          [formArrayName]="'favProds'"
+        >
+          <button type="button" (click)="onAddFavProd()">Add Favourite Products</button>
+          <div *ngFor="let favProd of favProdControl.controls; let i = index">
+            <div [formGroupName]="i">
+              <div>
+                <input type="text" [formControlName]="'category'" />
+                <input
+                  type="text"
+                  [formControlName]="'name'"
+                />
+              </div>
+              <span (click)="onDeleteFavProd(i)">&#10006;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form__submit-btn-wrapper">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </app-card>

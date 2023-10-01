@@ -1,0 +1,30 @@
+<li class="checkout-option">
+    <app-checkout-steps-title 
+        [optionName]="optionName" 
+        optionIndex="2"
+        [bgClass]="bgClass"
+        [showChangeBtn]="showChangeBtn"
+    >
+    </app-checkout-steps-title>
+    <section *ngIf="isThisCheckoutOptActive" >
+        <div class="address-list">
+            <div class="address-item" *ngFor="let add of delvAddresses">
+                <input type="radio" name="address" [value]="add.id" [(ngModel)]="selectedAddId"/>
+                <div class="address-item__info">
+                    <h4>{{add.name}} {{add.mobile}}</h4>
+                    <p>{{add.house}}, {{add.address}}, {{add.landmark}}, {{add.city}}, {{add.state}} - {{add.zipcode}}</p>
+                    <button *ngIf="add.id===selectedAddId" (click)="clickHandler(add)">deliver here</button>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="!viewAddressForm" class="new-address" (click)="showAddressForm()">
+            <mat-icon>add</mat-icon>
+            <h5>Add a new address</h5>
+        </div>
+        <div *ngIf="viewAddressForm" class="new-address">
+            <input type="radio" checked />
+            <h5>Add a new address</h5>
+        </div>
+        <app-address-form *ngIf="viewAddressForm"></app-address-form>
+    </section>
+</li>

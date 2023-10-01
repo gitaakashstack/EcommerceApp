@@ -1,0 +1,107 @@
+@import '../../../../common-styles.scss';
+
+generic-input{
+    width:100%;
+    border-radius: 3px;
+    border:1px solid gray;
+    outline: none;
+    padding:5px 10px;
+}
+
+.address-form{
+    padding:10px 25px;
+    display: grid;
+    grid-template-columns: minmax(200px, 300px) minmax(200px,300px);
+    gap: 10px;
+    justify-content: start;
+    animation: anim 0.3s;
+    transform-origin: top ;
+    
+    .input-elem__container{
+        position: relative;
+        
+        input{
+            @extend generic-input;
+            line-height: 1.5rem;
+        }
+
+        label{
+            @extend modified-label;
+        }
+
+        input:focus + label, select:focus + label{
+            @extend input-focus-label
+        }
+
+        input:not(:placeholder-shown) + label, select:valid + label{
+            @extend input-focus-label
+        }
+
+        select{
+            @extend generic-input;
+            padding:9px 10px; 
+            //*default line height is 16px and the applied line height is 1.5rem i.e 24px
+            //* i.e extra 4px each on top and bottom...so we apply a padding of 5px(padding-top/bottom on input) +
+            //* 4px = 9px 
+
+            option{
+                text-transform: capitalize;
+            }
+        }
+
+        .outline-red{
+            outline:1px solid red;
+        }
+    }
+
+    .textarea-elem__container{
+        grid-column: 1/3;
+        position: relative;
+        line-height: 1rem;
+
+        label{
+            @extend modified-label;
+        }
+
+        textarea:focus + label{
+            @extend input-focus-label
+        }
+
+        textarea:not(:placeholder-shown) + label{
+            @extend input-focus-label
+        }
+        textarea{
+            @extend generic-input
+        }
+    }
+
+}
+
+.save-btn{
+    @extend checkout-btn;
+    padding:10px 50px;
+}
+modified-label{
+    position: absolute;
+    left:10px;
+    top:8px;
+    color:gray;
+    background-color: white;
+    padding: 0px 5px;
+    transition: all 0.1s;
+}
+input-focus-label{
+    top:-7px;
+    color:dodgerblue;
+    font-size: 0.6rem;
+}
+
+@keyframes anim {
+    0%{
+        transform: scaleY(0);
+    }
+    100%{
+        transform: scaleY(1);
+    }
+    
+}

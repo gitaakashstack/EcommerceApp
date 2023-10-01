@@ -1,0 +1,108 @@
+@import '../../../../common-styles.scss';
+
+.centered{
+    @extend .centered;
+
+    .inner-wrapper{
+        // margin:50px auto 10px auto;
+        width: 300px;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+
+        .search-img-wrapper{
+            width: 100px;
+            height: 100px;
+    
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    
+        .margin-vertical{
+            margin:20px 0 10px 0;
+        }
+    
+        .first-dot{
+            opacity: 0;
+            animation: anim-opacity 1s linear 0s infinite alternate;
+            // animation: name duration timing-function delay iteration-count direction fill-mode;
+    
+        }
+        .second-dot{
+            opacity: 0;
+            animation: anim-opacity 1s linear 0.5s infinite alternate;
+        }
+        .third-dot{
+            opacity: 0;
+            animation: anim-opacity 1s linear 1s infinite alternate;
+        }
+    
+        @keyframes anim-opacity {
+            0%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+            
+        }
+    }
+
+    
+}
+
+.prods-container{
+    // display: grid;
+    // $gridColumn:$gridColumn;
+    // grid-template-columns: repeat($gridColumn,1fr);
+    gap:15px 10px;
+
+    .prod-item{
+        img{
+            width:100%;
+            // height: 180px;
+            // object-fit: contain;
+        }
+
+        figcaption{
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-weight: 500;
+            // height: calc(2*$lineHeight);
+        }
+
+        .prod-item__weight{
+            font-size: 0.8em;
+            margin:5px 0 10px 0;
+        }
+
+        .prod-item--flex{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .prod-price--strikethrough{
+                text-decoration: line-through;
+                font-size: 0.8em;
+                margin-bottom: 5px;
+            }
+
+            .prod-price--bold{
+                font-weight: 500;
+
+            }
+        }
+    }
+
+    hr{
+        border:1px solid rgba(72, 60, 60, 0.1);
+    }
+
+}

@@ -1,0 +1,15 @@
+<li class="checkout-option">
+    <app-checkout-steps-title 
+        [optionName]="optionName" 
+        optionIndex="3"
+        [bgClass]="bgClass"
+        [showChangeBtn]="showChangeBtn"
+    >
+    </app-checkout-steps-title>
+    <section *ngIf="isThisCheckoutOptActive">
+        <div class="btns-container">
+            <button (click)="navigateToSlot()">select slot</button>
+            <button>autoselect</button>
+        </div>
+    </section>
+</li>

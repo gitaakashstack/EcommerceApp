@@ -1,0 +1,17 @@
+<li class="checkout-option">
+    <app-checkout-steps-title 
+        [optionName]="optionName" 
+        optionIndex="4"
+        [bgClass]="bgClass"
+        [showChangeBtn]="showChangeBtn"
+    >
+    </app-checkout-steps-title>
+    <section *ngIf="isThisCheckoutOptActive">
+        <div class="payment-list">
+            <div class="payment-item" *ngFor="let pmItem of paymentOptions">
+                <input type="radio" name="payment-option">
+                <p>{{pmItem.name}}</p>
+            </div>
+        </div>
+    </section>
+</li>

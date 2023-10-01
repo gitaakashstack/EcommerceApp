@@ -1,0 +1,20 @@
+<li class="checkout-option">
+    <app-checkout-steps-title 
+        [optionName]="optionName" 
+        optionIndex="1"
+        [bgClass]="bgClass"
+        [showChangeBtn]="showChangeBtn"
+    ></app-checkout-steps-title>
+    <div *ngIf="isThisCheckoutOptActive" class="login-detail">
+        <div class="login-detail--flex">
+            <span class="login-detail--font-small">Name</span>
+            <span>Aakash Pandey</span>
+        </div>
+        <div class="login-detail--flex">
+            <span class="login-detail--font-small">Mobile</span>
+            <span>9199939712</span>
+        </div>
+        <div class="login-detail--blue">Sign In to Another Account</div>
+        <button class="login-detail__btn" (click)="clickHandler()">Continue</button>
+    </div>
+</li>

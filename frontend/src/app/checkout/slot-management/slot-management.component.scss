@@ -1,0 +1,32 @@
+.slot-label{
+    padding:10px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slot-grid{
+    display: grid;
+    grid-template-columns: 0.4fr repeat(3,1fr);
+    grid-gap:10px 20px;
+
+    .slot-grid--slot-height{
+        height: 30px;
+    }
+
+    .time-label{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .date-label{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding:10px 0;
+
+    }
+
+}

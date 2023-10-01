@@ -1,0 +1,15 @@
+<div class="carousel-container__outer">
+    <div class="carousel-container__inner" [ngStyle]="{'gap':gapPx}">
+        <div    #item 
+                class="carousel-item" 
+                *ngFor="let img of imgLinks"
+                [ngStyle]="{'width':widthPx}"
+        >
+            <img [src]="img" alt="offers">
+        </div>
+    </div>
+    <div class="slide-btns">
+        <button *ngIf="startIndx !== 0" class="slide-btn--left" (click)="slideRight()">&lt;</button>
+        <button *ngIf="startIndx !== totalImages-1" class="slide-btn--right" (click)="slideLeft()">&gt;</button>
+    </div>
+</div>

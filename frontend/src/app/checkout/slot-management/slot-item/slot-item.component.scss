@@ -1,0 +1,43 @@
+.slot-item{
+    display: flex;
+    width: 100%;
+    padding:10px 10px 10px 40px;
+    align-items: center;
+    border-left-width: 10px;
+    border-left-style: solid;
+    background-color: lightgreen;
+    border-radius: 5px;
+    gap:5px;
+
+    .slot-item--bold{
+        font-weight: 600;
+        font-size: 1.2rem;
+    }
+
+    .slot-item--small{
+        font-weight: 400;
+        font-size: 0.7rem;
+    }
+
+    .slot-item--round{
+        position: relative;
+        width:50px;
+        height:45px;
+        border-radius: 50%;
+        
+
+        p{
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%, -50%)
+
+        }
+    }
+}
+
+
+
+.slot-grid--slot-width{
+    height: 80px;
+}

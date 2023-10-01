@@ -1,0 +1,36 @@
+<section class="prod-list">
+    <div class="prod" *ngFor="let product of products | fromObject">
+        <div class="prod__img-wrapper">
+            <img src="../../assets/brown_bread.jpg" alt="chips">
+        </div>
+        <div class="prod-info__wrapper">
+            <p class="prod-info__title">{{selectedProduct[product.key].name}}</p>
+            <p *ngIf="product.value.length===1">
+                {{selectedProduct[product.key].measuringUnitValue}}{{selectedProduct[product.key].measuringBaseUnit}}
+            </p>
+            <select *ngIf="product.value.length!==1" ngModel (ngModelChange)="selectedProduct[product.key]=$event">
+                <option
+                 *ngFor="let prodVariant of product.value" 
+                 [ngValue]="prodVariant"
+                >
+                {{prodVariant.quantityPerUnit}} x {{prodVariant.measuringUnitValue}}{{prodVariant.measuringBaseUnit}}
+                </option>
+            </select>
+            <div class="style--flex">
+                <p>&#8377; {{selectedProduct[product.key].unitPrice*selectedProduct[product.key].quantityPerUnit}}</p>
+                <ng-container *ngIf="(selectedProduct[product.key] ).quantityInCart==0; then addBtn else quantBtn"></ng-container>
+            </div>
+            <ng-template #addBtn>
+                <div class="prod__add-btn" (click)="showAddBtnHandler(selectedProduct[product.key])">
+                    ADD<span>+</span>
+                </div>
+            </ng-template>
+            <ng-template #quantBtn>
+                <app-prod-quant-btn [chipsData]="selectedProduct[product.key]"
+                >
+                    <span #quant [id]="selectedProduct[product.key].id">{{selectedProduct[product.key].quantityInCart}}</span>
+                </app-prod-quant-btn>
+            </ng-template>
+        </div>
+    </div>
+</section>

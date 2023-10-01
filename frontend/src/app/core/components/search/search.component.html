@@ -1,0 +1,44 @@
+<app-loading-spinner></app-loading-spinner>
+<div class="centered" *ngIf="isSearchBarEmpty">
+    <div class="inner-wrapper">
+        <div class="search-img-wrapper">
+            <img alt="Search Icon" src="../../assets/5613.jpg"> 
+        </div>
+        <h2 class="margin-vertical">Search for Products
+            <span class="first-dot">.</span>
+            <span class="second-dot">.</span>
+            <span class="third-dot">.</span>
+        </h2>
+        <h5>Please start typing in search box to get results </h5>
+    </div>
+</div>
+<div class="centered" *ngIf="!isSearchBarEmpty && !(isLoading$ | async) && isSearchResultEmpty">
+    <h3>No Products Found</h3>
+</div>
+<div class="prods-container" [ngStyle]="getGridStyle()">
+    <ng-container *ngFor="let prod of searchedProds; let i=index">
+        <figure class="prod-item" >
+            <img src="../../assets/istockphoto-1181503791-1024x1024.jpg">
+            <!-- <figcaption>{{prod.title}}</figcaption> -->
+            <!-- <p class="prod-item__weight">{{prod.weight}} kg</p> -->
+            <div class="prod-item--flex">
+                <div class="prod-item-price">
+                    <p class="prod-price--strikethrough">&#8377; oldPrice</p>
+                    <!-- <p class="prod-price--bold">&#8377; {{prod.price}}</p> -->
+                </div>
+                <!-- <ng-container *ngIf="(prod | getCartQuant).quantityInCart==0; then addBtn else quantBtn"></ng-container> -->
+                <ng-template #addBtn>
+                    <div class="prod__add-btn" (click)="showAddBtnHandler(prod)">
+                        ADD<span>+</span>
+                    </div>
+                </ng-template>
+                <ng-template #quantBtn>
+                    <app-prod-quant-btn  [chipsData]="prod">
+                        <!-- <span #quant [id]="prod.id">{{prod.cartQuantity}}</span> -->
+                    </app-prod-quant-btn>
+                </ng-template>
+            </div>
+        </figure>
+        <hr *ngIf="isNotLastRow(i)" [ngStyle]="getGridColumnSpanStyle()">
+    </ng-container>
+</div>

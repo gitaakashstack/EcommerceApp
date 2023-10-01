@@ -1,0 +1,62 @@
+@import '../../app.component.scss';
+
+header{
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.form{
+    .form__inputs-wrapper{
+        display: flex;
+        flex-direction: column;
+        gap:20px;
+    }
+    .form__input-wrapper{
+        display: flex;
+        flex-direction: column;
+        label{
+            margin-bottom: 10px;
+        }
+        input{
+            margin-bottom: 3px;
+            border-radius: 3px;
+            border:1px solid black;
+            padding:3px;
+        }
+
+    }
+    .err-msg{
+        font-size: 0.8em;
+        font-weight: 600;
+        color:crimson
+    }
+    .form-err{
+        font-size: 1em;
+        margin:5px 0;
+    }
+
+    .form__btn-wrapper{
+        text-align: center;
+
+        button{
+            @include basic-btn;
+        }
+    }
+}
+
+hr{
+    margin-bottom: 10px;
+}
+.register-block{
+    text-align: center;
+    p{
+        font-size: 0.8em;
+        color:royalblue;
+    }
+
+    button{
+        @include basic-btn
+    }
+}

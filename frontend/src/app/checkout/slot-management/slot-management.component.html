@@ -1,0 +1,22 @@
+<div class="slot-label">
+    <div class="slot-lable--green" [ngStyle]="{'backgroundColor':emissionColorCodes.green.dark}"></div>
+    <div class="slot-lable--orange" [ngStyle]="{'backgroundColor':emissionColorCodes.orange.dark}"></div>
+    <div class="slot-lable--red" [ngStyle]="{'backgroundColor':emissionColorCodes.red.dark}"></div>
+</div>
+<main class="slot-grid">
+    <div></div>
+    <div class="date-label" *ngFor="let slot of daySlots">
+        {{slot}}
+    </div>
+    <ng-container *ngFor="let val of deliverySlotList | fromObject">
+        <div class="time-label slot-grid--slot-width">{{val.key}}</div>
+        <ng-container *ngFor="let slot of val.value">
+            <app-slot-item  
+                [emission]="slot.emission" 
+                [delvCharge]="slot.deliveryCharge" 
+                [isSlotAvl]="slot.isSlotAvailable"
+                [colorCode]="slot.colorCode"
+            ></app-slot-item>
+        </ng-container>
+    </ng-container>
+</main>

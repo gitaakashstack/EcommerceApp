@@ -1,0 +1,18 @@
+<div class="atop-nav__account">
+    <h4 class="atop-nav__account-links" *ngIf="!isLoggedIn" [routerLink]="['register']">Register</h4>
+    <h4 class="atop-nav__account-links" *ngIf="!isLoggedIn" [routerLink]="['log-in']">Log In</h4>
+    <div class="atop-nav__account-nav" *ngIf="isLoggedIn">
+        <div class="atop-nav__account-icon">
+            <mat-icon>person</mat-icon>
+            <span *ngIf="isLoggedIn"> Hi {{userName}}</span>
+        </div>
+        <ul class="atop-nav__account-nav-links">
+            <li>Orders</li>
+            <li>Address</li>
+            <li>Wallet</li>
+            <li>Profile</li>
+            <hr>
+            <li>Log Out</li>
+        </ul>
+    </div>
+</div>

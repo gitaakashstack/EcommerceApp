@@ -1,0 +1,48 @@
+
+<!-- <aside class="side-block">
+    <div class="price-summary">
+        <h2>PRICE DETAILS</h2>
+        <dl class="price-summary__container">
+            <div class="price-summary--flex">
+                <dt>MRP ({{totalItems}} items)</dt>
+                <dd>{{totalPrice}}</dd>
+            </div>
+            <div class="price-summary--flex">
+                <dt>Product Discount</dt>
+                <dd>{{totalDiscount}}</dd>
+            </div>
+            <div class="price-summary--flex">
+                <dt>Delivery Fee</dt>
+                <dd>{{deliveryFee}}</dd>
+            </div>
+            <hr>
+            <div class="price-summary--flex price-summary__total">
+                <dt>Total Amount</dt>
+                <dd>{{netPrice}}</dd>
+            </div>
+        </dl>
+    </div>
+    <button class="slot-btn" [routerLink]="['/slot']">Select Your Slot</button>
+</aside> -->
+<div class="cart-summary">
+    <div class="prod-container" *ngFor="let cartItem of cartData">
+        <div class="prod-image">
+            <img src="../../../../assets/brown_bread.jpg" alt="prod-img">
+        </div>
+        <main>
+            <div class="prod-detail">
+                <div class="prod-title">{{cartItem.name}}</div>
+                <div class="prod-wt">{{cartItem.quantityPerUnit}} x {{cartItem.measuringUnitValue}} {{cartItem.measuringBaseUnit}}</div>
+                <div class="prod-price">&#8377; {{cartItem.unitPrice*cartItem.quantityPerUnit*cartItem.quantityInCart }}</div>
+            </div>
+            <app-prod-quant-btn 
+                [chipsData]="{
+                    id:cartItem.id, 
+                    price:cartItem.unitPrice*cartItem.quantityPerUnit}"
+            >
+                <span #quant [id]="cartItem.id">{{cartItem.quantityInCart}}</span>
+            </app-prod-quant-btn>
+        </main>
+    </div>
+</div>
+<app-cart-cost ></app-cart-cost>
